@@ -102,22 +102,20 @@ export default function UploadPage() {
 
       <div className="px-6 py-6">
         <div
-          className={`border-2 border-dashed rounded-3xl p-8 text-center transition-all duration-300 ${
-            dragActive
-              ? 'border-[#1E3A8A] bg-[#1E3A8A]/10 scale-[1.02]'
-              : selectedFile
-              ? 'border-green-500 bg-green-50'
-              : 'border-gray-300 bg-white'
-          }`}
+          className={`border-2 border-dashed rounded-3xl p-10 text-center transition-all duration-300 ${dragActive
+            ? 'border-[#1E3A8A] bg-[#1E3A8A]/5 scale-[1.01] shadow-inner'
+            : selectedFile
+              ? 'border-emerald-500/50 bg-emerald-50/50 backdrop-blur-sm shadow-[0_8px_30px_rgb(16,185,129,0.1)]'
+              : 'border-gray-200 bg-white/50 backdrop-blur-sm shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:border-[#1E3A8A]/30 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]'
+            }`}
           onDragEnter={handleDrag}
           onDragLeave={handleDrag}
           onDragOver={handleDrag}
           onDrop={handleDrop}
         >
           <div className="flex flex-col items-center">
-            <div className={`w-24 h-24 rounded-3xl flex items-center justify-center mb-4 transition-all duration-300 ${
-              selectedFile ? 'bg-gradient-to-br from-green-500 to-green-600 shadow-xl' : 'bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] shadow-lg'
-            }`}>
+            <div className={`w-24 h-24 rounded-3xl flex items-center justify-center mb-4 transition-all duration-300 ${selectedFile ? 'bg-gradient-to-br from-green-500 to-green-600 shadow-xl' : 'bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] shadow-lg'
+              }`}>
               <i className={`${selectedFile ? 'ri-check-line' : 'ri-file-pdf-line'} w-12 h-12 flex items-center justify-center text-white`}></i>
             </div>
             <h3 className="text-lg font-bold text-gray-900 mb-2">
@@ -130,7 +128,7 @@ export default function UploadPage() {
               <>
                 <input type="file" accept=".pdf" onChange={handleFileChange} className="hidden" id="file-upload" />
                 <label htmlFor="file-upload">
-                  <div className="bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white px-8 py-3 rounded-2xl font-semibold cursor-pointer hover:shadow-xl transition-all duration-300 whitespace-nowrap inline-flex items-center gap-2">
+                  <div className="bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white px-8 py-3.5 rounded-2xl font-semibold cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.16)] transition-all duration-300 transform hover:-translate-y-0.5 whitespace-nowrap inline-flex items-center gap-2">
                     <i className="ri-upload-line w-5 h-5 flex items-center justify-center"></i>
                     Select PDF File
                   </div>
@@ -153,11 +151,10 @@ export default function UploadPage() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer ${
-                  selectedCategory === cat
-                    ? 'bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white shadow-lg'
-                    : 'bg-white text-gray-700 border border-gray-200 hover:border-[#1E3A8A]'
-                }`}
+                className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 whitespace-nowrap cursor-pointer ${selectedCategory === cat
+                  ? 'bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white shadow-[0_4px_15px_rgb(0,0,0,0.1)]'
+                  : 'bg-white/80 backdrop-blur-sm text-gray-600 border border-gray-100 hover:border-[#1E3A8A]/30 hover:shadow-[0_4px_15px_rgb(0,0,0,0.03)]'
+                  }`}
               >
                 {cat}
               </button>
@@ -166,8 +163,8 @@ export default function UploadPage() {
         </div>
 
         {isProcessing && (
-          <div className="mt-6 bg-white rounded-3xl p-6 shadow-lg border border-gray-100">
-            <div className="flex items-center gap-4 mb-4">
+          <div className="mt-8 bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/50">
+            <div className="flex items-center gap-4 mb-5">
               <div className="w-12 h-12 bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-2xl flex items-center justify-center">
                 <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
               </div>
@@ -189,7 +186,7 @@ export default function UploadPage() {
         <button
           onClick={handleGenerate}
           disabled={!selectedFile || isProcessing}
-          className="w-full bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white py-5 rounded-3xl font-bold text-lg mt-6 hover:shadow-2xl transition-all duration-300 shadow-xl disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap flex items-center justify-center gap-2"
+          className="w-full bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white py-4 rounded-2xl font-bold text-lg mt-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:hover:shadow-none whitespace-nowrap flex items-center justify-center gap-2"
         >
           {isProcessing ? (
             <>
@@ -204,7 +201,7 @@ export default function UploadPage() {
           )}
         </button>
 
-        <div className="mt-6 bg-white rounded-3xl p-6 shadow-lg border border-gray-100">
+        <div className="mt-8 bg-white/60 backdrop-blur-md rounded-3xl p-6 border border-white/50 shadow-[0_4px_24px_rgb(0,0,0,0.02)]">
           <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
             <i className="ri-information-line w-5 h-5 flex items-center justify-center text-[#1E3A8A]"></i>
             What to Expect

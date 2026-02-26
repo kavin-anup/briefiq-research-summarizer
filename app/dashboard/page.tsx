@@ -52,15 +52,6 @@ export default function DashboardPage() {
 
   const generalSummaries = [
     {
-      id: 1,
-      title: 'Quantum Entanglement and Its Applications in Secure Communication',
-      preview: 'This study demonstrates a breakthrough in quantum key distribution achieving 99.7% fidelity over 500km fiber optic networks, enabling truly unbreakable encryption...',
-      date: '2024-01-15',
-      category: 'Physics',
-      duration: '5 min read',
-      icon: 'ri-atom-line'
-    },
-    {
       id: 2,
       title: 'CRISPR-Cas9 Gene Editing in Drought-Resistant Crop Development',
       preview: 'Targeted gene modifications in wheat and maize genomes yield 40% improvement in drought tolerance without compromising yield, offering solutions to food security...',
@@ -130,11 +121,10 @@ export default function DashboardPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
-                    selectedCategory === cat
-                      ? 'bg-white text-[#0A1F44] shadow-lg'
-                      : 'bg-white/15 text-white/80 border border-white/20 hover:bg-white/25'
-                  }`}
+                  className={`px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 ${selectedCategory === cat
+                    ? 'bg-white text-[#0A1F44] shadow-lg'
+                    : 'bg-white/15 text-white/80 border border-white/20 hover:bg-white/25'
+                    }`}
                 >
                   {cat}
                 </button>
@@ -146,7 +136,7 @@ export default function DashboardPage() {
 
       <div className="px-6 -mt-4">
         <Link href="/upload">
-          <button className="w-full bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white py-5 rounded-3xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 shadow-xl whitespace-nowrap flex items-center justify-center gap-3 transform hover:scale-[1.02]">
+          <button className="w-full bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white py-5 rounded-3xl font-semibold text-lg transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] whitespace-nowrap flex items-center justify-center gap-3 transform hover:-translate-y-1">
             <i className="ri-upload-cloud-line w-6 h-6 flex items-center justify-center"></i>
             Upload New Paper
           </button>
@@ -163,16 +153,16 @@ export default function DashboardPage() {
           <div className="space-y-4">
             {summaries.map((summary) => (
               <Link key={summary.id} href={`/summary/${summary.id}`}>
-                <div className="bg-white rounded-3xl p-5 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-[1.02] relative overflow-hidden mb-4">
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#0A1F44] to-[#1E3A8A]"></div>
+                <div className="bg-white/80 backdrop-blur-md rounded-3xl p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-white/50 transition-all duration-300 cursor-pointer transform hover:-translate-y-1 relative overflow-hidden mb-4">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#0A1F44] to-[#1E3A8A] opacity-80"></div>
                   <div className="flex items-start gap-4">
                     <div className="w-14 h-14 bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                       <i className={`${summary.icon} w-7 h-7 flex items-center justify-center text-white`}></i>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-2 mb-1">
-                        <h3 className="font-bold text-gray-900 line-clamp-2 flex-1 text-sm leading-snug">{summary.title}</h3>
-                        <span className="px-2.5 py-1 bg-[#1E3A8A]/10 text-[#1E3A8A] text-xs font-semibold rounded-xl whitespace-nowrap flex-shrink-0">{summary.category}</span>
+                      <div className="flex items-start justify-between gap-3 mb-1.5">
+                        <h3 className="font-bold text-gray-900 line-clamp-2 flex-1 text-sm leading-relaxed">{summary.title}</h3>
+                        <span className="px-3 py-1 bg-[#1E3A8A]/5 text-[#1E3A8A] text-[10px] uppercase tracking-wider font-bold rounded-lg whitespace-nowrap flex-shrink-0 border border-[#1E3A8A]/10">{summary.category}</span>
                       </div>
                       <p className="text-xs text-gray-500 line-clamp-2 mb-3 leading-relaxed">{summary.preview}</p>
                       <div className="flex items-center justify-between">
@@ -203,7 +193,8 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="mt-4 bg-white rounded-3xl p-6 shadow-lg border border-gray-100">
+        <div className="mt-4 bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 relative overflow-hidden">
+          <div className="absolute -right-4 -top-4 w-24 h-24 bg-gradient-to-br from-[#1E3A8A]/5 to-[#0A1F44]/5 rounded-full blur-2xl"></div>
           <div className="flex items-center gap-4 mb-3">
             <div className="w-12 h-12 bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-2xl flex items-center justify-center">
               <i className="ri-lightbulb-line w-6 h-6 flex items-center justify-center text-white"></i>

@@ -42,8 +42,8 @@ export default function RegisterPage() {
       <div className="min-h-screen bg-gradient-to-br from-[#f4f6f9] to-[#e8edf5] flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-md">
           <div className="text-center mb-10">
-            <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-3xl flex items-center justify-center mb-4 shadow-xl">
-              <i className="ri-brain-line text-4xl text-white"></i>
+            <div className="w-20 h-20 mx-auto rounded-3xl flex items-center justify-center mb-4">
+              <img src="/logo.png" alt="" />
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome to BriefIQ</h1>
             <p className="text-gray-500 text-base">Choose your summarizer mode to get started</p>
@@ -52,16 +52,14 @@ export default function RegisterPage() {
           <div className="space-y-4 mb-8">
             <button
               onClick={() => handleModeSelect('general')}
-              className={`w-full rounded-3xl p-6 border-2 text-left transition-all duration-300 cursor-pointer ${
-                selectedMode === 'general'
+              className={`w-full rounded-3xl p-6 border-2 text-left transition-all duration-300 cursor-pointer ${selectedMode === 'general'
                   ? 'border-[#1E3A8A] bg-[#1E3A8A]/5 shadow-xl'
                   : 'border-gray-200 bg-white hover:border-[#1E3A8A]/40 hover:shadow-lg'
-              }`}
+                }`}
             >
               <div className="flex items-start gap-4">
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md transition-all duration-300 ${
-                  selectedMode === 'general' ? 'bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A]' : 'bg-[#f4f6f9]'
-                }`}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md transition-all duration-300 ${selectedMode === 'general' ? 'bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A]' : 'bg-[#f4f6f9]'
+                  }`}>
                   <i className={`ri-flask-line text-2xl ${selectedMode === 'general' ? 'text-white' : 'text-[#1E3A8A]'}`}></i>
                 </div>
                 <div className="flex-1">
@@ -85,16 +83,14 @@ export default function RegisterPage() {
 
             <button
               onClick={() => handleModeSelect('medical')}
-              className={`w-full rounded-3xl p-6 border-2 text-left transition-all duration-300 cursor-pointer ${
-                selectedMode === 'medical'
+              className={`w-full rounded-3xl p-6 border-2 text-left transition-all duration-300 cursor-pointer ${selectedMode === 'medical'
                   ? 'border-[#1E3A8A] bg-[#1E3A8A]/5 shadow-xl'
                   : 'border-gray-200 bg-white hover:border-[#1E3A8A]/40 hover:shadow-lg'
-              }`}
+                }`}
             >
               <div className="flex items-start gap-4">
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md transition-all duration-300 ${
-                  selectedMode === 'medical' ? 'bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A]' : 'bg-[#f4f6f9]'
-                }`}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md transition-all duration-300 ${selectedMode === 'medical' ? 'bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A]' : 'bg-[#f4f6f9]'
+                  }`}>
                   <i className={`ri-heart-pulse-line text-2xl ${selectedMode === 'medical' ? 'text-white' : 'text-[#1E3A8A]'}`}></i>
                 </div>
                 <div className="flex-1">
@@ -128,7 +124,7 @@ export default function RegisterPage() {
 
           <p className="text-center text-sm text-gray-500 mt-5">
             Already have an account?{' '}
-            <Link href="/dashboard" className="text-[#1E3A8A] font-semibold hover:underline">Sign In</Link>
+            <Link href="/login" className="text-[#1E3A8A] font-semibold hover:underline">Sign In</Link>
           </p>
         </div>
       </div>
@@ -139,9 +135,9 @@ export default function RegisterPage() {
     <div className="min-h-screen bg-gradient-to-br from-[#f4f6f9] to-[#e8edf5] flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className={`w-20 h-20 mx-auto bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-3xl flex items-center justify-center mb-4 shadow-xl`}>
-            <i className={`${selectedMode === 'medical' ? 'ri-heart-pulse-line' : 'ri-flask-line'} text-4xl text-white`}></i>
-          </div>
+          <div className="w-20 h-20 mx-auto rounded-3xl flex items-center justify-center mb-4">
+              <img src="/logo.png" alt="" />
+            </div>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#1E3A8A]/10 rounded-full mb-3">
             <i className={`${selectedMode === 'medical' ? 'ri-heart-pulse-line' : 'ri-flask-line'} text-[#1E3A8A] text-sm`}></i>
             <span className="text-[#1E3A8A] text-sm font-semibold">{selectedMode === 'medical' ? 'Medical Research Mode' : 'General Research Mode'}</span>
@@ -220,7 +216,7 @@ export default function RegisterPage() {
           <div className="mt-6 text-center">
             <p className="text-gray-600 text-sm">
               Already have an account?{' '}
-              <Link href="/dashboard" className="text-[#1E3A8A] font-semibold hover:underline">Sign In</Link>
+              <Link href="/login" className="text-[#1E3A8A] font-semibold hover:underline">Sign In</Link>
             </p>
           </div>
         </div>

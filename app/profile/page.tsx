@@ -28,15 +28,15 @@ export default function ProfilePage() {
       <div className="bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white pb-20">
         <div className="px-6 py-8">
           <h1 className="text-2xl font-bold mb-8">Profile</h1>
-          
+
           <div className="flex flex-col items-center">
-            <div className="w-28 h-28 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4 border-4 border-white/30 shadow-2xl">
-              <span className="text-4xl font-bold text-white">SC</span>
+            <div className="w-28 h-28 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mb-5 border-[3px] border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+              <span className="text-4xl font-bold text-white tracking-widest">SC</span>
             </div>
-            <h2 className="text-2xl font-bold mb-1">{userName}</h2>
-            <p className="text-white/80 mb-2">{userEmail}</p>
-            <div className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-xl border border-white/30">
-              <p className="text-sm font-semibold">{userSpecialty}</p>
+            <h2 className="text-2xl font-bold mb-1 tracking-wide">{userName}</h2>
+            <p className="text-white/80 mb-3 text-sm">{userEmail}</p>
+            <div className="px-5 py-1.5 bg-white/15 backdrop-blur-md rounded-full border border-white/30 shadow-inner">
+              <p className="text-xs font-bold uppercase tracking-widest">{userSpecialty}</p>
             </div>
           </div>
         </div>
@@ -45,20 +45,22 @@ export default function ProfilePage() {
       <div className="px-6 -mt-12">
         <div className="grid grid-cols-3 gap-3 mb-6">
           {stats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 text-center">
-              <div className={`w-12 h-12 mx-auto bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mb-3 shadow-lg`}>
+            <div key={index} className="bg-white/80 backdrop-blur-md rounded-3xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 text-center transform hover:-translate-y-1 transition-all duration-300">
+              <div className={`w-12 h-12 mx-auto bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mb-3 shadow-[0_4px_15px_rgb(0,0,0,0.1)]`}>
                 <i className={`${stat.icon} w-6 h-6 flex items-center justify-center text-white`}></i>
               </div>
-              <p className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</p>
-              <p className="text-xs text-gray-600 leading-tight">{stat.label}</p>
+              <p className="text-2xl font-bold text-[#0A1F44] mb-1">{stat.value}</p>
+              <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">{stat.label}</p>
             </div>
           ))}
         </div>
 
-        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden mb-6">
-          <div className="p-5 border-b border-gray-100">
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 overflow-hidden mb-6">
+          <div className="p-5 border-b border-gray-100/50 bg-gradient-to-r from-[#f4f6f9]/50 to-transparent">
             <h3 className="font-bold text-gray-900 flex items-center gap-2">
-              <i className="ri-vip-crown-line w-5 h-5 flex items-center justify-center text-[#1E3A8A]"></i>
+              <div className="w-8 h-8 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center">
+                <i className="ri-vip-crown-line w-4 h-4 flex items-center justify-center text-[#1E3A8A]"></i>
+              </div>
               Subscription Plan
             </h3>
           </div>
@@ -78,12 +80,11 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden mb-6">
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 overflow-hidden mb-6">
           {menuItems.map((item, index) => (
             <Link key={index} href={item.link}>
-              <div className={`flex items-center justify-between p-5 hover:bg-[#f4f6f9] transition-colors cursor-pointer ${
-                index !== menuItems.length - 1 ? 'border-b border-gray-100' : ''
-              }`}>
+              <div className={`flex items-center justify-between p-5 hover:bg-[#f4f6f9] transition-colors cursor-pointer ${index !== menuItems.length - 1 ? 'border-b border-gray-100' : ''
+                }`}>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-[#f4f6f9] rounded-xl flex items-center justify-center">
                     <i className={`${item.icon} w-5 h-5 flex items-center justify-center text-[#1E3A8A]`}></i>
@@ -96,7 +97,7 @@ export default function ProfilePage() {
           ))}
         </div>
 
-        <button className="w-full bg-white text-red-600 py-4 rounded-2xl font-bold border-2 border-red-600 hover:bg-red-600 hover:text-white transition-all duration-300 shadow-lg whitespace-nowrap flex items-center justify-center gap-2">
+        <button className="w-full bg-white/80 backdrop-blur-md text-red-500 py-4 rounded-3xl font-bold border border-red-100 hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all duration-300 shadow-[0_4px_15px_rgb(0,0,0,0.02)] whitespace-nowrap flex items-center justify-center gap-2">
           <i className="ri-logout-box-line w-5 h-5 flex items-center justify-center"></i>
           Logout
         </button>

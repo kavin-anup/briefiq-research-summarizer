@@ -61,13 +61,13 @@ export default function LibraryPage() {
           </div>
 
           <div className="relative">
-            <i className="ri-search-line absolute left-4 top-1/2 -translate-y-1/2 text-white/70 w-5 h-5 flex items-center justify-center"></i>
+            <i className="ri-search-line absolute left-4 top-1/2 -translate-y-1/2 text-white/50 w-5 h-5 flex items-center justify-center"></i>
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search summaries..."
-              className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 text-sm"
+              className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl text-white placeholder-white/50 focus:outline-none focus:ring-1 focus:ring-white/30 focus:bg-white/15 transition-all text-sm shadow-inner"
             />
           </div>
         </div>
@@ -79,11 +79,10 @@ export default function LibraryPage() {
             <button
               key={filter}
               onClick={() => setSelectedFilter(filter)}
-              className={`px-5 py-2.5 rounded-2xl font-semibold text-sm whitespace-nowrap transition-all duration-300 cursor-pointer ${
-                selectedFilter === filter
-                  ? 'bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white shadow-lg'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:border-[#1E3A8A]'
-              }`}
+              className={`px-5 py-2.5 rounded-full font-semibold text-sm whitespace-nowrap transition-all duration-300 cursor-pointer ${selectedFilter === filter
+                ? 'bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white shadow-[0_4px_15px_rgb(0,0,0,0.12)]'
+                : 'bg-white/80 backdrop-blur-md text-gray-600 border border-white/50 hover:border-[#1E3A8A]/20 hover:shadow-[0_4px_15px_rgb(0,0,0,0.04)]'
+                }`}
             >
               {filter}
             </button>
@@ -107,16 +106,16 @@ export default function LibraryPage() {
           <div className="space-y-4">
             {filteredSummaries.map((summary) => (
               <Link key={summary.id} href={`/summary/${summary.id}`}>
-                <div className="bg-white rounded-3xl p-5 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-[1.02] relative overflow-hidden mb-4">
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#0A1F44] to-[#1E3A8A]"></div>
+                <div className="bg-white/90 backdrop-blur-md rounded-3xl p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 cursor-pointer transform hover:-translate-y-1 relative overflow-hidden mb-4">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#0A1F44] to-[#1E3A8A] opacity-80"></div>
                   <div className="flex items-start gap-4">
                     <div className="w-14 h-14 bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                       <i className={`${summary.icon} w-7 h-7 flex items-center justify-center text-white`}></i>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between mb-2 gap-2">
-                        <h3 className="font-bold text-gray-900 line-clamp-2 flex-1 text-sm leading-snug">{summary.title}</h3>
-                        <span className="ml-2 px-3 py-1 bg-[#1E3A8A]/10 text-[#1E3A8A] text-xs font-semibold rounded-xl whitespace-nowrap flex-shrink-0">
+                      <div className="flex items-start justify-between mb-2 gap-3">
+                        <h3 className="font-bold text-gray-900 line-clamp-2 flex-1 text-sm leading-relaxed">{summary.title}</h3>
+                        <span className="ml-2 px-3 py-1 bg-[#1E3A8A]/5 text-[#1E3A8A] text-[10px] uppercase tracking-wider font-bold rounded-lg whitespace-nowrap flex-shrink-0 border border-[#1E3A8A]/10">
                           {summary.category}
                         </span>
                       </div>

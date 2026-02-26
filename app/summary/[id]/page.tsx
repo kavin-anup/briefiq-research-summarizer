@@ -11,6 +11,7 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function SummaryPage({ params }: { params: { id: string } }) {
+export default async function SummaryPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   return <SummaryDetail summaryId={params.id} />;
 }

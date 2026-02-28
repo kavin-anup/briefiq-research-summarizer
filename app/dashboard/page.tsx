@@ -95,35 +95,49 @@ export default function DashboardPage() {
   const cfg = modeConfig[mode];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f4f6f9] to-[#e8edf5] pb-24">
-      <div className="bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white">
+    <div className="min-h-screen bg-[#F0F4F8] pb-24 relative overflow-hidden">
+      {/* Futuristic Background Grids/Blobs */}
+      <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none">
+        <div className="absolute w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] mix-blend-multiply top-[-10%] right-[-10%] animate-pulse" style={{ animationDuration: '10s' }}></div>
+        <div className="absolute w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px] mix-blend-multiply bottom-[10%] left-[-10%]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,39,88,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,39,88,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+      </div>
+
+      <div className="relative z-10">
         <div className="px-6 py-8">
-          <div className="flex items-center justify-between mb-5">
-            <div>
-              <p className="text-white/70 text-sm mb-1">Welcome back</p>
-              <h1 className="text-2xl font-bold">{cfg.greeting} {userName}</h1>
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-white/60 backdrop-blur-xl rounded-[1.2rem] shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)] border border-white/80 flex items-center justify-center p-2">
+                <img src="/logo.png" alt="BriefIQ" className="w-full h-full object-contain" />
+              </div>
+              <span className="text-2xl font-black tracking-tighter text-primary">BriefIQ</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="px-3 py-1.5 bg-white/15 backdrop-blur-sm rounded-xl border border-white/20 flex items-center gap-1.5">
-                <i className={`${cfg.icon} text-white/90 text-sm`}></i>
-                <span className="text-white/90 text-xs font-semibold">{cfg.label}</span>
-              </div>
-              <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                <i className="ri-notification-3-line w-5 h-5 flex items-center justify-center"></i>
-              </div>
+            <button className="w-12 h-12 bg-white/60 backdrop-blur-xl rounded-[1.2rem] flex items-center justify-center border border-white/80 shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)] text-primary/60 hover:text-primary hover:bg-white/80 transition-all cursor-pointer">
+              <i className="ri-notification-3-line text-lg flex items-center justify-center"></i>
+            </button>
+          </div>
+
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <p className="text-secondary font-bold text-xs uppercase tracking-wider mb-1">Welcome back</p>
+              <h1 className="text-3xl font-black tracking-tight text-primary leading-none">{cfg.greeting} {userName}</h1>
+            </div>
+            <div className="px-4 py-2 bg-primary/5 backdrop-blur-md rounded-[1rem] border border-primary/10 flex items-center gap-2 shadow-sm">
+              <i className={`${cfg.icon} text-primary text-sm`}></i>
+              <span className="text-primary text-xs font-bold uppercase tracking-wider">{cfg.label}</span>
             </div>
           </div>
 
-          <div>
-            <p className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-2">{cfg.categoryLabel}</p>
-            <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+          <div className="mt-8">
+            <p className="text-primary/50 text-[10px] font-black uppercase tracking-widest mb-3 pl-1">{cfg.categoryLabel}</p>
+            <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x">
               {categories.map(cat => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 ${selectedCategory === cat
-                    ? 'bg-white text-[#0A1F44] shadow-lg'
-                    : 'bg-white/15 text-white/80 border border-white/20 hover:bg-white/25'
+                  className={`px-5 py-2.5 rounded-[1.2rem] text-xs font-bold whitespace-nowrap transition-all duration-300 snap-start border ${selectedCategory === cat
+                    ? 'bg-primary text-white border-primary shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] transform -translate-y-0.5'
+                    : 'bg-white/50 text-primary/60 border-white/80 hover:bg-white/80 hover:text-primary hover:border-white shadow-sm'
                     }`}
                 >
                   {cat}
@@ -134,54 +148,58 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <div className="px-6 -mt-4">
-        <Link href="/upload">
-          <button className="w-full bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white py-5 rounded-3xl font-semibold text-lg transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] whitespace-nowrap flex items-center justify-center gap-3 transform hover:-translate-y-1">
-            <i className="ri-upload-cloud-line w-6 h-6 flex items-center justify-center"></i>
-            Upload New Paper
+      <div className="px-6 relative z-10 w-full mb-6 mt-2">
+        <Link href="/upload" className="block transition-all duration-300 hover:-translate-y-1 hover:!z-10 group relative">
+          <div className="absolute inset-0 bg-secondary/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <button className="w-full bg-white/60 backdrop-blur-xl text-primary py-5 rounded-[2rem] font-bold text-lg shadow-[0_10px_30px_-10px_rgba(16,39,88,0.1)] border border-white/80 hover:bg-white/80 whitespace-nowrap flex items-center justify-center gap-3 relative z-10 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+            <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+              <i className="ri-upload-cloud-line w-5 h-5 flex items-center justify-center text-primary"></i>
+            </div>
+            Initialize Matrix Uplink
           </button>
         </Link>
 
         <div className="mt-8">
-          <div className="flex items-center justify-between mb-5">
-            <h2 className="text-xl font-bold text-gray-900">Recent Summaries</h2>
-            <Link href="/library" className="text-[#1E3A8A] text-sm font-semibold hover:underline">
-              View All
+          <div className="flex items-center justify-between mb-5 px-1">
+            <h2 className="text-xl font-black text-primary tracking-tight">Recent Nodes</h2>
+            <Link href="/library" className="text-secondary text-xs uppercase tracking-wider font-bold hover:text-primary transition-colors flex items-center gap-1">
+              View All <i className="ri-arrow-right-line"></i>
             </Link>
           </div>
 
           <div className="space-y-4">
             {summaries.map((summary) => (
-              <Link key={summary.id} href={`/summary/${summary.id}`}>
-                <div className="bg-white/80 backdrop-blur-md rounded-3xl p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-white/50 transition-all duration-300 cursor-pointer transform hover:-translate-y-1 relative overflow-hidden mb-4">
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#0A1F44] to-[#1E3A8A] opacity-80"></div>
+              <Link key={summary.id} href={`/summary/${summary.id}`} className="block">
+                <div className="bg-white/50 backdrop-blur-md rounded-[2rem] p-5 shadow-[0_10px_30px_-15px_rgba(16,39,88,0.05)] border border-white/80 hover:border-primary/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-1 group relative overflow-hidden mb-4">
+                  <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <i className={`${summary.icon} w-7 h-7 flex items-center justify-center text-white`}></i>
+                    <div className="w-14 h-14 bg-white border border-white shadow-sm rounded-[1.2rem] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300 relative z-10">
+                      <i className={`${summary.icon} text-2xl text-primary`}></i>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-3 mb-1.5">
-                        <h3 className="font-bold text-gray-900 line-clamp-2 flex-1 text-sm leading-relaxed">{summary.title}</h3>
-                        <span className="px-3 py-1 bg-[#1E3A8A]/5 text-[#1E3A8A] text-[10px] uppercase tracking-wider font-bold rounded-lg whitespace-nowrap flex-shrink-0 border border-[#1E3A8A]/10">{summary.category}</span>
+                    <div className="flex-1 min-w-0 relative z-10">
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                        <h3 className="font-bold text-primary line-clamp-2 flex-1 text-sm leading-snug">{summary.title}</h3>
+                        <span className="px-2.5 py-1 bg-white border border-secondary/20 shadow-sm text-secondary text-[9px] uppercase tracking-wider font-extrabold rounded-lg whitespace-nowrap flex-shrink-0">{summary.category}</span>
                       </div>
-                      <p className="text-xs text-gray-500 line-clamp-2 mb-3 leading-relaxed">{summary.preview}</p>
+                      <p className="text-xs text-primary/60 line-clamp-2 mb-4 leading-relaxed font-medium">{summary.preview}</p>
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3 text-xs text-gray-400">
+                        <div className="flex items-center gap-3 text-[10px] text-primary/40 font-bold uppercase tracking-wider">
                           <span className="flex items-center gap-1">
-                            <i className="ri-calendar-line w-3.5 h-3.5 flex items-center justify-center"></i>
+                            <i className="ri-calendar-line text-sm"></i>
                             {summary.date}
                           </span>
                           <span className="flex items-center gap-1">
-                            <i className="ri-time-line w-3.5 h-3.5 flex items-center justify-center"></i>
+                            <i className="ri-time-line text-sm"></i>
                             {summary.duration}
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <button className="w-8 h-8 bg-[#f4f6f9] rounded-xl flex items-center justify-center hover:bg-[#1E3A8A] hover:text-white transition-colors">
-                            <i className="ri-volume-up-line w-4 h-4 flex items-center justify-center"></i>
+                          <button className="w-8 h-8 bg-white border border-white/80 shadow-sm rounded-xl flex items-center justify-center text-primary/40 hover:text-primary hover:border-primary/20 transition-all cursor-pointer">
+                            <i className="ri-volume-up-line text-sm"></i>
                           </button>
-                          <button className="w-8 h-8 bg-[#1E3A8A] text-white rounded-xl flex items-center justify-center hover:bg-[#0A1F44] transition-colors">
-                            <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
+                          <button className="w-8 h-8 bg-primary text-white shadow-sm rounded-xl flex items-center justify-center hover:bg-secondary transition-colors cursor-pointer group-hover:animate-pulse">
+                            <i className="ri-arrow-right-line text-sm"></i>
                           </button>
                         </div>
                       </div>
@@ -193,18 +211,19 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="mt-4 bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 relative overflow-hidden">
-          <div className="absolute -right-4 -top-4 w-24 h-24 bg-gradient-to-br from-[#1E3A8A]/5 to-[#0A1F44]/5 rounded-full blur-2xl"></div>
-          <div className="flex items-center gap-4 mb-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-2xl flex items-center justify-center">
-              <i className="ri-lightbulb-line w-6 h-6 flex items-center justify-center text-white"></i>
+        <div className="mt-6 bg-white/60 backdrop-blur-xl rounded-[2rem] p-6 shadow-[0_10px_40px_-10px_rgba(16,39,88,0.1)] border border-primary/10 relative overflow-hidden group">
+          <div className="absolute -right-10 -top-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl group-hover:bg-secondary/20 transition-colors"></div>
+          <div className="absolute -left-10 -bottom-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
+          <div className="flex items-center gap-4 mb-3 relative z-10">
+            <div className="w-12 h-12 bg-white rounded-[1.2rem] shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)] border border-white flex items-center justify-center">
+              <i className="ri-lightbulb-line text-xl text-secondary"></i>
             </div>
             <div>
-              <h3 className="font-bold text-gray-900">{cfg.tipTitle}</h3>
-              <p className="text-xs text-gray-500">Save time with audio summaries</p>
+              <h3 className="font-black text-primary tracking-tight text-base uppercase">{cfg.tipTitle}</h3>
+              <p className="text-xs font-bold text-primary/50 uppercase tracking-widest">Protocol Recommendation</p>
             </div>
           </div>
-          <p className="text-sm text-gray-700 leading-relaxed">{cfg.tip}</p>
+          <p className="text-sm text-primary/80 leading-relaxed font-bold relative z-10 mt-3">{cfg.tip}</p>
         </div>
       </div>
 

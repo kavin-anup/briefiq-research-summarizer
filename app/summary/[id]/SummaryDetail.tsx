@@ -56,143 +56,157 @@ export default function SummaryDetail({ summaryId }: SummaryDetailProps) {
   const practiceIcon = mode === 'medical' ? 'ri-hospital-line' : 'ri-arrow-right-circle-line';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f4f6f9] to-[#e8edf5] pb-6">
-      <div className="bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white">
+    <div className="min-h-screen bg-[#F0F4F8] pb-6 relative overflow-hidden">
+      {/* Futuristic Background Grids/Blobs */}
+      <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none">
+        <div className="absolute w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] mix-blend-multiply top-[-10%] right-[-10%] animate-pulse" style={{ animationDuration: '10s' }}></div>
+        <div className="absolute w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px] mix-blend-multiply bottom-[10%] left-[-10%]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,39,88,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,39,88,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+      </div>
+
+      <div className="relative z-10 w-full">
         <div className="px-6 py-6 flex items-center justify-between">
-          <div className="flex items-center">
+          <div className="flex items-center gap-4">
             <Link href="/dashboard">
-              <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center cursor-pointer hover:bg-white/30 transition-colors border border-white/30">
-                <i className="ri-arrow-left-line w-5 h-5 flex items-center justify-center"></i>
+              <div className="w-12 h-12 bg-white/60 backdrop-blur-xl rounded-[1.2rem] flex items-center justify-center cursor-pointer hover:bg-white/80 transition-all border border-white/80 shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)] group">
+                <i className="ri-arrow-left-line text-lg text-primary/60 group-hover:text-primary transition-colors flex items-center justify-center"></i>
               </div>
             </Link>
-            <h1 className="text-lg font-bold ml-4">Summary Details</h1>
+            <h1 className="text-2xl font-black text-primary tracking-tight">Node Details</h1>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/15 rounded-xl border border-white/20">
-              <i className={`${summary.icon} text-white/90 text-sm`}></i>
-              <span className="text-white/90 text-xs font-semibold">{summary.category}</span>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-xl rounded-[1rem] border border-white/80 shadow-sm">
+              <i className={`${summary.icon} text-primary text-sm`}></i>
+              <span className="text-primary text-xs font-bold uppercase tracking-wider">{summary.category}</span>
             </div>
-            <button className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center hover:bg-white/20 transition-colors border border-white/20 shadow-inner cursor-pointer">
-              <i className="ri-download-line w-5 h-5 flex items-center justify-center"></i>
+            <button className="w-12 h-12 bg-white/60 backdrop-blur-xl rounded-[1.2rem] flex items-center justify-center border border-white/80 shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)] text-primary/60 hover:text-primary hover:bg-white/80 transition-all cursor-pointer group">
+              <i className="ri-download-line text-lg flex items-center justify-center group-hover:-translate-y-0.5 transition-transform"></i>
             </button>
-            <button className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center hover:bg-white/20 transition-colors border border-white/20 shadow-inner cursor-pointer">
-              <i className="ri-share-line w-5 h-5 flex items-center justify-center"></i>
+            <button className="w-12 h-12 bg-white/60 backdrop-blur-xl rounded-[1.2rem] flex items-center justify-center border border-white/80 shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)] text-primary/60 hover:text-primary hover:bg-white/80 transition-all cursor-pointer group">
+              <i className="ri-share-line text-lg flex items-center justify-center group-hover:-translate-y-0.5 transition-transform"></i>
             </button>
           </div>
         </div>
       </div>
 
-      <div className="px-6 py-6">
-        <div className="bg-white/90 backdrop-blur-xl rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/60 mb-6">
-          <div className="flex items-start gap-5 mb-6">
-            <div className="w-16 h-20 bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-[0_8px_20px_rgb(10,31,68,0.2)]">
-              <i className={`${summary.icon} w-8 h-8 flex items-center justify-center text-white`}></i>
+      <div className="px-6 py-6 relative z-10 w-full">
+        <div className="bg-white/60 backdrop-blur-xl rounded-[2.5rem] p-8 shadow-[0_20px_40px_-15px_rgba(16,39,88,0.1)] border border-white/80 mb-6 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none group-hover:bg-primary/10 transition-colors duration-500"></div>
+
+          <div className="flex items-start gap-5 mb-8 relative z-10">
+            <div className="w-16 h-16 bg-white border border-white shadow-sm rounded-[1.5rem] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-500">
+              <i className={`${summary.icon} text-3xl text-primary`}></i>
             </div>
             <div className="flex-1">
-              <h2 className="text-xl font-bold text-gray-900 mb-3 leading-snug">{summary.title}</h2>
-              <div className="flex items-center gap-4 text-[13px] font-medium text-gray-500">
-                <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100">
-                  <i className="ri-calendar-line w-4 h-4 flex items-center justify-center text-[#1E3A8A]"></i>
+              <h2 className="text-2xl font-black text-primary mb-3 leading-snug tracking-tight">{summary.title}</h2>
+              <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-primary/50 uppercase tracking-wider">
+                <span className="flex items-center gap-1.5 bg-white/80 px-4 py-2 rounded-[1rem] border border-white/80 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+                  <i className="ri-calendar-line text-sm text-primary"></i>
                   {summary.processedDate}
                 </span>
-                <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100">
-                  <i className="ri-time-line w-4 h-4 flex items-center justify-center text-[#1E3A8A]"></i>
+                <span className="flex items-center gap-1.5 bg-white/80 px-4 py-2 rounded-[1rem] border border-white/80 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+                  <i className="ri-time-line text-sm text-primary"></i>
                   {summary.duration}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4 relative z-10">
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="flex-1 bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white py-4 rounded-2xl font-bold shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.18)] transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transform hover:-translate-y-0.5"
+              className="flex-[2] bg-primary text-white py-4.5 rounded-[1.5rem] font-bold shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:bg-primary/95 transition-all duration-300 flex items-center justify-center gap-3 whitespace-nowrap cursor-pointer transform hover:-translate-y-1 relative overflow-hidden group/btn"
             >
-              <i className={`${isPlaying ? 'ri-pause-line' : 'ri-play-line'} w-5 h-5 flex items-center justify-center`}></i>
-              {isPlaying ? 'Pause Audio' : 'Play Audio'}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></div>
+              <i className={`${isPlaying ? 'ri-pause-line' : 'ri-play-line'} text-xl relative z-10 ${isPlaying ? 'animate-pulse' : ''}`}></i>
+              <span className="relative z-10">{isPlaying ? 'Pause Audio' : 'Play Audio'}</span>
             </button>
             <button
               onClick={() => setIsSaved(!isSaved)}
-              className={`px-5 py-4 rounded-2xl transition-all duration-300 cursor-pointer ${isSaved ? 'bg-[#1E3A8A] text-white' : 'bg-[#f4f6f9] text-gray-600 hover:bg-gray-200'
+              className={`flex-1 py-4.5 rounded-[1.5rem] border transition-all duration-300 cursor-pointer shadow-sm text-center flex items-center justify-center gap-2 ${isSaved ? 'bg-secondary text-white border-secondary' : 'bg-white/80 text-primary/60 border-white/80 hover:border-primary/30 hover:bg-white hover:text-primary'
                 }`}
             >
-              <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} w-5 h-5 flex items-center justify-center`}></i>
+              <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-xl`}></i>
+              <span className="font-bold text-sm">{isSaved ? 'Saved' : 'Save'}</span>
             </button>
           </div>
         </div>
 
-        <div className="bg-white/90 backdrop-blur-xl rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/60 overflow-hidden mb-8">
-          <div className="flex border-b border-gray-100 bg-white/50">
+        <div className="bg-white/60 backdrop-blur-xl rounded-[2.5rem] shadow-[0_10px_30px_-15px_rgba(16,39,88,0.1)] border border-white/80 overflow-hidden mb-8 relative">
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary opacity-50"></div>
+          <div className="flex border-b border-white/80 bg-white/40">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as 'bottom' | 'sample' | 'study')}
-                className={`flex-1 py-4.5 text-[11px] uppercase tracking-wider font-bold transition-all duration-300 flex flex-col items-center gap-1.5 cursor-pointer ${activeTab === tab.id
-                    ? 'text-[#0A1F44] bg-white border-b-[3px] border-[#0A1F44] shadow-[0_-4px_10px_rgb(0,0,0,0.02)]'
-                    : 'text-gray-400 hover:text-gray-600 hover:bg-white/80'
+                className={`flex-1 py-5 text-xs font-black uppercase tracking-widest transition-all duration-300 flex flex-col items-center gap-2 cursor-pointer relative ${activeTab === tab.id
+                  ? 'text-primary bg-white'
+                  : 'text-primary/40 hover:text-primary/80 hover:bg-white/50'
                   }`}
               >
-                <i className={`${tab.icon} w-4 h-4 flex items-center justify-center`}></i>
+                <i className={`${tab.icon} text-xl`}></i>
                 {tab.label}
+                {activeTab === tab.id && <div className="absolute bottom-0 inset-x-0 h-1 bg-primary"></div>}
               </button>
             ))}
           </div>
 
-          <div className="p-6">
+          <div className="p-8">
             {activeTab === 'bottom' && (
               <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-xl flex items-center justify-center shadow-[0_4px_15px_rgb(10,31,68,0.2)]">
-                    <i className="ri-lightbulb-line w-5 h-5 flex items-center justify-center text-white"></i>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-white rounded-[1.2rem] border border-white/80 shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)] flex items-center justify-center">
+                    <i className="ri-lightbulb-line text-xl text-secondary"></i>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">{tabs[0].label}</h3>
+                  <h3 className="text-xl font-black text-primary tracking-tight">{tabs[0].label}</h3>
                 </div>
-                <p className="text-gray-700 leading-loose mb-8 text-[15px]">{summary.bottomLine}</p>
-                <div className="bg-gradient-to-br from-[#f4f6f9] to-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.02)] relative overflow-hidden">
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#1E3A8A]"></div>
-                  <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center">
-                      <i className={`${practiceIcon} w-3.5 h-3.5 flex items-center justify-center text-[#1E3A8A]`}></i>
+                <p className="text-primary/80 leading-loose mb-8 text-base font-medium">{summary.bottomLine}</p>
+                <div className="bg-primary/5 rounded-[2rem] p-8 border border-primary/10 relative overflow-hidden group">
+                  <div className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-primary to-secondary"></div>
+                  <h4 className="font-black text-primary mb-4 flex items-center gap-3 tracking-tight text-lg">
+                    <div className="w-10 h-10 rounded-[1rem] bg-white border border-white/80 flex items-center justify-center shadow-sm">
+                      <i className={`${practiceIcon} text-lg text-secondary`}></i>
                     </div>
                     {practiceLabel}
                   </h4>
-                  <p className="text-sm text-gray-600 leading-relaxed font-medium">{summary.changeInPractice}</p>
+                  <p className="text-base text-primary/70 leading-relaxed font-bold">{summary.changeInPractice}</p>
                 </div>
               </div>
             )}
             {activeTab === 'sample' && (
               <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-xl flex items-center justify-center shadow-[0_4px_15px_rgb(10,31,68,0.2)]">
-                    <i className={`${tabs[1].icon} w-5 h-5 flex items-center justify-center text-white`}></i>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-white rounded-[1.2rem] border border-white/80 shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)] flex items-center justify-center">
+                    <i className={`${tabs[1].icon} text-xl text-secondary`}></i>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">{tabs[1].label}</h3>
+                  <h3 className="text-xl font-black text-primary tracking-tight">{tabs[1].label}</h3>
                 </div>
-                <p className="text-gray-700 leading-loose text-[15px]">{summary.sampleSize}</p>
+                <p className="text-primary/80 leading-loose text-base font-medium">{summary.sampleSize}</p>
               </div>
             )}
             {activeTab === 'study' && (
               <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#0A1F44] to-[#1E3A8A] rounded-xl flex items-center justify-center shadow-[0_4px_15px_rgb(10,31,68,0.2)]">
-                    <i className={`${tabs[2].icon} w-5 h-5 flex items-center justify-center text-white`}></i>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-white rounded-[1.2rem] border border-white/80 shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)] flex items-center justify-center">
+                    <i className={`${tabs[2].icon} text-xl text-secondary`}></i>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">{tabs[2].label}</h3>
+                  <h3 className="text-xl font-black text-primary tracking-tight">{tabs[2].label}</h3>
                 </div>
-                <p className="text-gray-700 leading-loose text-[15px]">{summary.studyType}</p>
+                <p className="text-primary/80 leading-loose text-base font-medium">{summary.studyType}</p>
               </div>
             )}
           </div>
         </div>
 
         <div className="flex gap-4">
-          <button className="flex-[0.8] bg-white/80 backdrop-blur-md text-[#0A1F44] py-4.5 rounded-2xl font-bold border border-gray-200 hover:border-[#0A1F44] hover:bg-gray-50 transition-all duration-300 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_15px_rgb(0,0,0,0.02)]">
-            <i className="ri-save-line w-5 h-5 flex items-center justify-center"></i>
-            Save
+          <button className="flex-[0.8] bg-white/60 backdrop-blur-xl text-primary py-4.5 rounded-[1.5rem] font-bold border border-white/80 hover:bg-white hover:border-primary/20 transition-all duration-300 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)]">
+            <i className="ri-save-line text-lg"></i>
+            Store Node
           </button>
-          <button className="flex-1 bg-gradient-to-r from-[#0A1F44] to-[#1E3A8A] text-white py-4.5 rounded-2xl font-bold shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.18)] transition-all duration-300 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
-            <i className="ri-download-2-line w-5 h-5 flex items-center justify-center"></i>
-            Download PDF
+          <button className="flex-1 bg-primary text-white py-4.5 rounded-[1.5rem] font-bold shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:bg-primary/95 transition-all duration-300 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-1 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+            <i className="ri-download-2-line text-lg relative z-10 group-hover:animate-bounce"></i>
+            <span className="relative z-10">Download PDF</span>
           </button>
         </div>
       </div>

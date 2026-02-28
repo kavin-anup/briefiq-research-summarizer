@@ -102,7 +102,7 @@ export default function UploadPage() {
           </div>
           <div className="flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-xl rounded-[1rem] border border-white/80 shadow-sm">
             <i className={`${cfg.icon} text-primary text-sm`}></i>
-            <span className="text-primary text-xs font-bold uppercase tracking-wider">{cfg.label}</span>
+            <span className="text-primary text-xs font-medium uppercase tracking-wider">{cfg.label}</span>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@ export default function UploadPage() {
               <>
                 <input type="file" accept=".pdf" onChange={handleFileChange} className="hidden" id="file-upload" />
                 <label htmlFor="file-upload">
-                  <div className="bg-white border border-white shadow-sm text-primary px-8 py-4 rounded-[1.5rem] font-bold cursor-pointer hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.2)] hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1 whitespace-nowrap inline-flex items-center gap-3">
+                  <div className="bg-white border border-white shadow-sm text-primary px-8 py-4 rounded-[1.5rem] font-medium cursor-pointer hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.2)] hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1 whitespace-nowrap inline-flex items-center gap-3">
                     <i className="ri-folder-open-line text-lg"></i>
                     Browse Matrix
                   </div>
@@ -159,7 +159,7 @@ export default function UploadPage() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-5 py-2.5 rounded-[1.2rem] text-xs font-bold transition-all duration-300 whitespace-nowrap cursor-pointer border ${selectedCategory === cat
+                className={`px-5 py-2.5 rounded-[1.2rem] text-xs font-medium transition-all duration-300 whitespace-nowrap cursor-pointer border ${selectedCategory === cat
                   ? 'bg-primary text-white border-primary shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] transform -translate-y-0.5'
                   : 'bg-white/60 text-primary/60 border-white/80 hover:bg-white/80 hover:text-primary hover:border-white shadow-sm'
                   }`}
@@ -180,7 +180,7 @@ export default function UploadPage() {
               </div>
               <div>
                 <h3 className="font-black text-primary text-lg tracking-tight">Decoupling Sequence</h3>
-                <p className="text-xs font-bold text-primary/50 uppercase tracking-widest mt-1">AI Node Analysis in Progress...</p>
+                <p className="text-xs font-medium text-primary/50 uppercase tracking-widest mt-1">AI Node Analysis in Progress...</p>
               </div>
             </div>
             <div className="w-full bg-primary/5 rounded-full h-3 overflow-hidden border border-primary/10 shadow-inner">
@@ -201,7 +201,7 @@ export default function UploadPage() {
         <button
           onClick={handleGenerate}
           disabled={!selectedFile || isProcessing}
-          className="w-full bg-primary text-white py-4.5 rounded-[1.5rem] font-bold text-base mt-8 hover:bg-primary/95 hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:transform-none disabled:hover:shadow-none whitespace-nowrap flex items-center justify-center gap-3 overflow-hidden relative group cursor-pointer"
+          className="w-full bg-primary text-white py-4.5 rounded-[1.5rem] font-medium text-base mt-8 hover:bg-primary/95 hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:transform-none disabled:hover:shadow-none whitespace-nowrap flex items-center justify-center gap-3 overflow-hidden relative group cursor-pointer"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:not-disabled:animate-[shimmer_1.5s_infinite]"></div>
           {isProcessing ? (
@@ -232,7 +232,7 @@ export default function UploadPage() {
                 <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center border border-white/80 shadow-sm flex-shrink-0">
                   <i className={`${tip.icon} text-lg flex items-center justify-center text-primary`}></i>
                 </div>
-                <span className="text-sm font-bold text-primary/70 pt-2 leading-relaxed">{tip.text}</span>
+                <span className="text-sm font-medium text-primary/70 pt-2 leading-relaxed">{tip.text}</span>
               </li>
             ))}
           </ul>

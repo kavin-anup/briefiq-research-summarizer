@@ -77,7 +77,7 @@ export default function SummaryDetail({ summaryId }: SummaryDetailProps) {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-xl rounded-[1rem] border border-white/80 shadow-sm">
               <i className={`${summary.icon} text-primary text-sm`}></i>
-              <span className="text-primary text-xs font-bold uppercase tracking-wider">{summary.category}</span>
+              <span className="text-primary text-xs font-medium uppercase tracking-wider">{summary.category}</span>
             </div>
             <button className="w-12 h-12 bg-white/60 backdrop-blur-xl rounded-[1.2rem] flex items-center justify-center border border-white/80 shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)] text-primary/60 hover:text-primary hover:bg-white/80 transition-all cursor-pointer group">
               <i className="ri-download-line text-lg flex items-center justify-center group-hover:-translate-y-0.5 transition-transform"></i>
@@ -99,7 +99,7 @@ export default function SummaryDetail({ summaryId }: SummaryDetailProps) {
             </div>
             <div className="flex-1">
               <h2 className="text-2xl font-black text-primary mb-3 leading-snug tracking-tight">{summary.title}</h2>
-              <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-primary/50 uppercase tracking-wider">
+              <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-primary/50 uppercase tracking-wider">
                 <span className="flex items-center gap-1.5 bg-white/80 px-4 py-2 rounded-[1rem] border border-white/80 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
                   <i className="ri-calendar-line text-sm text-primary"></i>
                   {summary.processedDate}
@@ -115,7 +115,7 @@ export default function SummaryDetail({ summaryId }: SummaryDetailProps) {
           <div className="flex items-center gap-4 relative z-10">
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="flex-[2] bg-primary text-white py-4.5 rounded-[1.5rem] font-bold shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:bg-primary/95 transition-all duration-300 flex items-center justify-center gap-3 whitespace-nowrap cursor-pointer transform hover:-translate-y-1 relative overflow-hidden group/btn"
+              className="flex-[2] bg-primary text-white py-4.5 rounded-[1.5rem] font-medium shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:bg-primary/95 transition-all duration-300 flex items-center justify-center gap-3 whitespace-nowrap cursor-pointer transform hover:-translate-y-1 relative overflow-hidden group/btn"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></div>
               <i className={`${isPlaying ? 'ri-pause-line' : 'ri-play-line'} text-xl relative z-10 ${isPlaying ? 'animate-pulse' : ''}`}></i>
@@ -127,7 +127,7 @@ export default function SummaryDetail({ summaryId }: SummaryDetailProps) {
                 }`}
             >
               <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-xl`}></i>
-              <span className="font-bold text-sm">{isSaved ? 'Saved' : 'Save'}</span>
+              <span className="font-medium text-sm">{isSaved ? 'Saved' : 'Save'}</span>
             </button>
           </div>
         </div>
@@ -169,7 +169,7 @@ export default function SummaryDetail({ summaryId }: SummaryDetailProps) {
                     </div>
                     {practiceLabel}
                   </h4>
-                  <p className="text-base text-primary/70 leading-relaxed font-bold">{summary.changeInPractice}</p>
+                  <p className="text-base text-primary/70 leading-relaxed font-medium">{summary.changeInPractice}</p>
                 </div>
               </div>
             )}
@@ -199,11 +199,11 @@ export default function SummaryDetail({ summaryId }: SummaryDetailProps) {
         </div>
 
         <div className="flex gap-4">
-          <button className="flex-[0.8] bg-white/60 backdrop-blur-xl text-primary py-4.5 rounded-[1.5rem] font-bold border border-white/80 hover:bg-white hover:border-primary/20 transition-all duration-300 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)]">
+          <button className="flex-[0.8] bg-white/60 backdrop-blur-xl text-primary py-4.5 rounded-[1.5rem] font-medium border border-white/80 hover:bg-white hover:border-primary/20 transition-all duration-300 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer shadow-[0_5px_15px_-5px_rgba(16,39,88,0.1)]">
             <i className="ri-save-line text-lg"></i>
             Store Node
           </button>
-          <button className="flex-1 bg-primary text-white py-4.5 rounded-[1.5rem] font-bold shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:bg-primary/95 transition-all duration-300 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-1 relative overflow-hidden group">
+          <button className="flex-1 bg-primary text-white py-4.5 rounded-[1.5rem] font-medium shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:bg-primary/95 transition-all duration-300 whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-1 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
             <i className="ri-download-2-line text-lg relative z-10 group-hover:animate-bounce"></i>
             <span className="relative z-10">Download PDF</span>

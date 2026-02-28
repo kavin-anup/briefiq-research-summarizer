@@ -61,7 +61,7 @@ export default function ProfilePage() {
                 <i className={`${stat.icon} text-xl flex items-center justify-center text-inherit`}></i>
               </div>
               <p className="text-2xl font-black text-primary mb-1">{stat.value}</p>
-              <p className="text-[9px] text-primary/50 font-bold uppercase tracking-wider">{stat.label}</p>
+              <p className="text-[9px] text-primary/50 font-medium uppercase tracking-wider">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -80,13 +80,13 @@ export default function ProfilePage() {
             <div className="flex items-center justify-between mb-5">
               <div>
                 <p className="font-black text-primary text-lg tracking-tight">Professional Sync</p>
-                <p className="text-xs font-bold text-primary/60 uppercase tracking-widest mt-1">Unlimited Query Capacity</p>
+                <p className="text-xs font-medium text-primary/60 uppercase tracking-widest mt-1">Unlimited Query Capacity</p>
               </div>
-              <div className="px-4 py-2 bg-secondary/10 border border-secondary/20 text-secondary rounded-[1rem] font-bold text-xs shadow-sm shadow-secondary/5">
+              <div className="px-4 py-2 bg-secondary/10 border border-secondary/20 text-secondary rounded-[1rem] font-medium text-xs shadow-sm shadow-secondary/5">
                 Active
               </div>
             </div>
-            <button className="w-full py-4 bg-white border border-white shadow-sm text-primary rounded-[1.5rem] font-bold hover:bg-primary/5 transition-colors whitespace-nowrap cursor-pointer">
+            <button className="w-full py-4 bg-white border border-white shadow-sm text-primary rounded-[1.5rem] font-medium hover:bg-primary/5 transition-colors whitespace-nowrap cursor-pointer">
               Modify Protocol
             </button>
           </div>
@@ -101,7 +101,7 @@ export default function ProfilePage() {
                   <div className="w-10 h-10 bg-white shadow-sm rounded-[1rem] flex items-center justify-center border border-white group-hover:scale-105 transition-transform duration-300">
                     <i className={`${item.icon} text-lg flex items-center justify-center text-primary`}></i>
                   </div>
-                  <span className="font-bold text-primary text-sm">{item.label}</span>
+                  <span className="font-medium text-primary text-sm">{item.label}</span>
                 </div>
                 <i className="ri-arrow-right-s-line text-xl flex items-center justify-center text-primary/30 group-hover:text-primary transition-colors group-hover:translate-x-1"></i>
               </div>
@@ -109,7 +109,7 @@ export default function ProfilePage() {
           ))}
         </div>
 
-        <button className="w-full bg-red-500/5 backdrop-blur-xl text-red-500 !py-3 rounded-[1.5rem] font-bold border border-red-500/10 hover:bg-red-500/10 hover:border-red-500/20 transition-all duration-300 shadow-sm whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer group">
+        <button className="w-full bg-red-500/5 backdrop-blur-xl text-red-500 !py-3 rounded-[1.5rem] font-medium border border-red-500/10 hover:bg-red-500/10 hover:border-red-500/20 transition-all duration-300 shadow-sm whitespace-nowrap flex items-center justify-center gap-2 cursor-pointer group">
           <i className="ri-logout-box-line text-lg flex items-center justify-center group-hover:-translate-x-1 transition-transform"></i>
           Disconnect Session
         </button>

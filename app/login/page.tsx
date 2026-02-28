@@ -45,7 +45,7 @@ export default function LoginPage() {
 
                     <form onSubmit={handleLogin} className="space-y-6 relative z-10">
                         <div className="space-y-2">
-                            <label className="block text-xs font-bold text-primary/70 uppercase tracking-wider ml-1">Email Coordinates</label>
+                            <label className="block text-xs font-medium text-primary/70 uppercase tracking-wider ml-1">Email Coordinates</label>
                             <div className="relative group">
                                 <i className="ri-mail-line absolute left-5 top-1/2 -translate-y-1/2 text-primary/40 group-focus-within:text-primary transition-colors w-5 h-5 flex items-center justify-center"></i>
                                 <input
@@ -60,7 +60,7 @@ export default function LoginPage() {
                         </div>
 
                         <div className="space-y-2">
-                            <label className="block text-xs font-bold text-primary/70 uppercase tracking-wider ml-1">Security Key</label>
+                            <label className="block text-xs font-medium text-primary/70 uppercase tracking-wider ml-1">Security Key</label>
                             <div className="relative group">
                                 <i className="ri-lock-line absolute left-5 top-1/2 -translate-y-1/2 text-primary/40 group-focus-within:text-primary transition-colors w-5 h-5 flex items-center justify-center"></i>
                                 <input
@@ -81,11 +81,11 @@ export default function LoginPage() {
                             <label className="flex items-center gap-3 cursor-pointer group">
                                 <div className="relative flex items-center justify-center">
                                     <input type="checkbox" className="peer w-5 h-5 rounded-[0.4rem] border-primary/20 text-secondary focus:ring-secondary focus:ring-offset-1 bg-white/50 transition-all cursor-pointer appearance-none checked:bg-secondary checked:border-secondary" />
-                                    <i className="ri-check-line absolute text-white opacity-0 peer-checked:opacity-100 pointer-events-none text-xs font-bold"></i>
+                                    <i className="ri-check-line absolute text-white opacity-0 peer-checked:opacity-100 pointer-events-none text-xs font-medium"></i>
                                 </div>
                                 <span className="text-sm font-medium text-primary/70 group-hover:text-primary transition-colors">Remember me</span>
                             </label>
-                            <button type="button" className="text-sm font-bold text-secondary hover:text-primary transition-colors">
+                            <button type="button" className="text-sm font-medium text-secondary hover:text-primary transition-colors">
                                 Forgot password?
                             </button>
                         </div>
@@ -93,7 +93,7 @@ export default function LoginPage() {
                         <button
                             type="submit"
                             disabled={isLoading}
-                            className="w-full bg-primary text-white py-4.5 rounded-[1.5rem] font-bold text-base hover:bg-primary/95 hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:transform-none disabled:hover:shadow-none whitespace-nowrap flex items-center justify-center gap-3 mt-4 overflow-hidden relative group"
+                            className="w-full bg-primary text-white py-4.5 rounded-[1.5rem] font-medium text-base hover:bg-primary/95 hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:transform-none disabled:hover:shadow-none whitespace-nowrap flex items-center justify-center gap-3 mt-4 overflow-hidden relative group"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
                             {isLoading ? (
@@ -113,7 +113,7 @@ export default function LoginPage() {
                     <div className="mt-8 text-center relative z-10">
                         <p className="text-primary/60 text-sm font-medium">
                             Don't have access?{' '}
-                            <Link href="/register" className="text-secondary font-bold hover:text-primary transition-colors ml-1">Request Entry</Link>
+                            <Link href="/register" className="text-secondary font-medium hover:text-primary transition-colors ml-1">Request Entry</Link>
                         </p>
                     </div>
                 </div>

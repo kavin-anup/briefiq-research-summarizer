@@ -119,12 +119,12 @@ export default function DashboardPage() {
 
           <div className="flex items-center justify-between mb-6">
             <div>
-              <p className="text-secondary font-bold text-xs uppercase tracking-wider mb-1">Welcome back</p>
+              <p className="text-secondary font-medium text-xs uppercase tracking-wider mb-1">Welcome back</p>
               <h1 className="text-3xl font-black tracking-tight text-primary leading-none">{cfg.greeting} {userName}</h1>
             </div>
             <div className="px-4 py-2 bg-primary/5 backdrop-blur-md rounded-[1rem] border border-primary/10 flex items-center gap-2 shadow-sm">
               <i className={`${cfg.icon} text-primary text-sm`}></i>
-              <span className="text-primary text-xs font-bold uppercase tracking-wider">{cfg.label}</span>
+              <span className="text-primary text-xs font-medium uppercase tracking-wider">{cfg.label}</span>
             </div>
           </div>
 
@@ -135,7 +135,7 @@ export default function DashboardPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-5 py-2.5 rounded-[1.2rem] text-xs font-bold whitespace-nowrap transition-all duration-300 snap-start border ${selectedCategory === cat
+                  className={`px-5 py-2.5 rounded-[1.2rem] text-xs font-medium whitespace-nowrap transition-all duration-300 snap-start border ${selectedCategory === cat
                     ? 'bg-primary text-white border-primary shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] transform -translate-y-0.5'
                     : 'bg-white/50 text-primary/60 border-white/80 hover:bg-white/80 hover:text-primary hover:border-white shadow-sm'
                     }`}
@@ -151,7 +151,7 @@ export default function DashboardPage() {
       <div className="px-6 relative z-10 w-full mb-6 mt-2">
         <Link href="/upload" className="block transition-all duration-300 hover:-translate-y-1 hover:!z-10 group relative">
           <div className="absolute inset-0 bg-secondary/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <button className="w-full bg-white/60 backdrop-blur-xl text-primary py-5 rounded-[2rem] font-bold text-lg shadow-[0_10px_30px_-10px_rgba(16,39,88,0.1)] border border-white/80 hover:bg-white/80 whitespace-nowrap flex items-center justify-center gap-3 relative z-10 overflow-hidden">
+          <button className="w-full bg-white/60 backdrop-blur-xl text-primary py-5 rounded-[2rem] font-medium text-lg shadow-[0_10px_30px_-10px_rgba(16,39,88,0.1)] border border-white/80 hover:bg-white/80 whitespace-nowrap flex items-center justify-center gap-3 relative z-10 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
             <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
               <i className="ri-upload-cloud-line w-5 h-5 flex items-center justify-center text-primary"></i>
@@ -163,7 +163,7 @@ export default function DashboardPage() {
         <div className="mt-8">
           <div className="flex items-center justify-between mb-5 px-1">
             <h2 className="text-xl font-black text-primary tracking-tight">Recent Nodes</h2>
-            <Link href="/library" className="text-secondary text-xs uppercase tracking-wider font-bold hover:text-primary transition-colors flex items-center gap-1">
+            <Link href="/library" className="text-secondary text-xs uppercase tracking-wider font-medium hover:text-primary transition-colors flex items-center gap-1">
               View All <i className="ri-arrow-right-line"></i>
             </Link>
           </div>
@@ -179,12 +179,12 @@ export default function DashboardPage() {
                     </div>
                     <div className="flex-1 min-w-0 relative z-10">
                       <div className="flex items-start justify-between gap-3 mb-2">
-                        <h3 className="font-bold text-primary line-clamp-2 flex-1 text-sm leading-snug">{summary.title}</h3>
-                        <span className="px-2.5 py-1 bg-white border border-secondary/20 shadow-sm text-secondary text-[9px] uppercase tracking-wider font-extrabold rounded-lg whitespace-nowrap flex-shrink-0">{summary.category}</span>
+                        <h3 className="font-medium text-primary line-clamp-2 flex-1 text-sm leading-snug">{summary.title}</h3>
+                        <span className="px-2.5 py-1 bg-white border border-secondary/20 shadow-sm text-secondary text-[9px] uppercase tracking-wider font-semibold rounded-lg whitespace-nowrap flex-shrink-0">{summary.category}</span>
                       </div>
                       <p className="text-xs text-primary/60 line-clamp-2 mb-4 leading-relaxed font-medium">{summary.preview}</p>
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3 text-[10px] text-primary/40 font-bold uppercase tracking-wider">
+                        <div className="flex items-center gap-3 text-[10px] text-primary/40 font-medium uppercase tracking-wider">
                           <span className="flex items-center gap-1">
                             <i className="ri-calendar-line text-sm"></i>
                             {summary.date}
@@ -220,10 +220,10 @@ export default function DashboardPage() {
             </div>
             <div>
               <h3 className="font-black text-primary tracking-tight text-base uppercase">{cfg.tipTitle}</h3>
-              <p className="text-xs font-bold text-primary/50 uppercase tracking-widest">Protocol Recommendation</p>
+              <p className="text-xs font-medium text-primary/50 uppercase tracking-widest">Protocol Recommendation</p>
             </div>
           </div>
-          <p className="text-sm text-primary/80 leading-relaxed font-bold relative z-10 mt-3">{cfg.tip}</p>
+          <p className="text-sm text-primary/80 leading-relaxed font-medium relative z-10 mt-3">{cfg.tip}</p>
         </div>
       </div>
 

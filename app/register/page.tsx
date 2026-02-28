@@ -75,14 +75,14 @@ export default function RegisterPage() {
                     <h3 className={`text-xl font-black ${selectedMode === 'general' ? 'text-primary' : 'text-primary/70'}`}>General Research</h3>
                     {selectedMode === 'general' && (
                       <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center shadow-sm">
-                        <i className="ri-check-line text-white text-sm font-bold"></i>
+                        <i className="ri-check-line text-white text-sm font-medium"></i>
                       </div>
                     )}
                   </div>
                   <p className="text-sm text-primary/60 leading-relaxed font-medium">For academics, scientists & researchers across all disciplines — physics, biology, social sciences, engineering, and more.</p>
                   <div className="flex flex-wrap gap-2 mt-3">
                     {['Physics', 'Biology', 'Social Sciences', 'Engineering'].map(tag => (
-                      <span key={tag} className="px-2.5 py-1 bg-white/60 border border-white/80 text-primary/70 text-[10px] font-bold tracking-wider uppercase rounded-lg shadow-sm">{tag}</span>
+                      <span key={tag} className="px-2.5 py-1 bg-white/60 border border-white/80 text-primary/70 text-[10px] font-medium tracking-wider uppercase rounded-lg shadow-sm">{tag}</span>
                     ))}
                   </div>
                 </div>
@@ -107,14 +107,14 @@ export default function RegisterPage() {
                     <h3 className={`text-xl font-black ${selectedMode === 'medical' ? 'text-primary' : 'text-primary/70'}`}>Medical Research</h3>
                     {selectedMode === 'medical' && (
                       <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center shadow-sm">
-                        <i className="ri-check-line text-white text-sm font-bold"></i>
+                        <i className="ri-check-line text-white text-sm font-medium"></i>
                       </div>
                     )}
                   </div>
                   <p className="text-sm text-primary/60 leading-relaxed font-medium">For doctors, clinicians & medical researchers — clinical trials, diagnostics, treatment protocols, and patient outcomes.</p>
                   <div className="flex flex-wrap gap-2 mt-3">
                     {['Cardiology', 'Oncology', 'Neurology', 'Pediatrics'].map(tag => (
-                      <span key={tag} className="px-2.5 py-1 bg-white/60 border border-white/80 text-primary/70 text-[10px] font-bold tracking-wider uppercase rounded-lg shadow-sm">{tag}</span>
+                      <span key={tag} className="px-2.5 py-1 bg-white/60 border border-white/80 text-primary/70 text-[10px] font-medium tracking-wider uppercase rounded-lg shadow-sm">{tag}</span>
                     ))}
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export default function RegisterPage() {
           <button
             onClick={handleContinue}
             disabled={!selectedMode}
-            className="w-full bg-primary text-white py-4.5 rounded-[1.5rem] font-bold text-base hover:bg-primary/95 hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:transform-none disabled:hover:shadow-none whitespace-nowrap flex items-center justify-center gap-3 mt-4 overflow-hidden relative group"
+            className="w-full bg-primary text-white py-4.5 rounded-[1.5rem] font-medium text-base hover:bg-primary/95 hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:transform-none disabled:hover:shadow-none whitespace-nowrap flex items-center justify-center gap-3 mt-4 overflow-hidden relative group"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
             <span className="relative z-10">Initialize Mode</span>
@@ -135,7 +135,7 @@ export default function RegisterPage() {
           <div className="mt-8 text-center relative z-10">
             <p className="text-primary/60 text-sm font-medium">
               Already have access?{' '}
-              <Link href="/login" className="text-secondary font-bold hover:text-primary transition-colors ml-1">Sign In</Link>
+              <Link href="/login" className="text-secondary font-medium hover:text-primary transition-colors ml-1">Sign In</Link>
             </p>
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function RegisterPage() {
           </div>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/60 backdrop-blur-md border border-white/80 shadow-sm rounded-full mb-6">
             <i className={`${selectedMode === 'medical' ? 'ri-heart-pulse-line' : 'ri-flask-line'} text-primary text-sm`}></i>
-            <span className="text-primary text-xs tracking-wider uppercase font-bold">{selectedMode === 'medical' ? 'Medical Mode Active' : 'General Mode Active'}</span>
+            <span className="text-primary text-xs tracking-wider uppercase font-medium">{selectedMode === 'medical' ? 'Medical Mode Active' : 'General Mode Active'}</span>
           </div>
           <h1 className="text-4xl font-black text-primary mb-3 tracking-tight">Create Profile</h1>
           <p className="text-primary/60 font-medium tracking-wide uppercase text-sm">Join the Matrix</p>
@@ -170,7 +170,7 @@ export default function RegisterPage() {
           <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary opacity-50"></div>
           <form onSubmit={handleRegister} className="space-y-6 relative z-10">
             <div className="space-y-2">
-              <label className="block text-xs font-bold text-primary/70 uppercase tracking-wider ml-1">Email Coordinates</label>
+              <label className="block text-xs font-medium text-primary/70 uppercase tracking-wider ml-1">Email Coordinates</label>
               <div className="relative group">
                 <i className="ri-mail-line absolute left-5 top-1/2 -translate-y-1/2 text-primary/40 group-focus-within:text-primary transition-colors w-5 h-5 flex items-center justify-center"></i>
                 <input
@@ -185,7 +185,7 @@ export default function RegisterPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="block text-xs font-bold text-primary/70 uppercase tracking-wider ml-1">Security Key (Password)</label>
+              <label className="block text-xs font-medium text-primary/70 uppercase tracking-wider ml-1">Security Key (Password)</label>
               <div className="relative group">
                 <i className="ri-lock-line absolute left-5 top-1/2 -translate-y-1/2 text-primary/40 group-focus-within:text-primary transition-colors w-5 h-5 flex items-center justify-center"></i>
                 <input
@@ -203,7 +203,7 @@ export default function RegisterPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="block text-xs font-bold text-primary/70 uppercase tracking-wider ml-1">Confirm Security Key</label>
+              <label className="block text-xs font-medium text-primary/70 uppercase tracking-wider ml-1">Confirm Security Key</label>
               <div className="relative group">
                 <i className="ri-lock-line absolute left-5 top-1/2 -translate-y-1/2 text-primary/40 group-focus-within:text-primary transition-colors w-5 h-5 flex items-center justify-center"></i>
                 <input
@@ -223,7 +223,7 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-primary text-white py-4.5 rounded-[1.5rem] font-bold text-base hover:bg-primary/95 hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:transform-none disabled:hover:shadow-none whitespace-nowrap flex items-center justify-center gap-3 mt-4 overflow-hidden relative group"
+              className="w-full bg-primary text-white py-4.5 rounded-[1.5rem] font-medium text-base hover:bg-primary/95 hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:transform-none disabled:hover:shadow-none whitespace-nowrap flex items-center justify-center gap-3 mt-4 overflow-hidden relative group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
               {isLoading ? (
@@ -243,12 +243,12 @@ export default function RegisterPage() {
           <div className="mt-8 text-center relative z-10">
             <p className="text-primary/60 text-sm font-medium">
               Already have access?{' '}
-              <Link href="/login" className="text-secondary font-bold hover:text-primary transition-colors ml-1">Sign In</Link>
+              <Link href="/login" className="text-secondary font-medium hover:text-primary transition-colors ml-1">Sign In</Link>
             </p>
           </div>
         </div>
 
-        <button onClick={() => setStep('mode')} className="w-full mt-6 text-center text-xs font-bold uppercase tracking-wider text-primary/50 hover:text-primary transition-colors flex items-center justify-center gap-2 cursor-pointer group">
+        <button onClick={() => setStep('mode')} className="w-full mt-6 text-center text-xs font-medium uppercase tracking-wider text-primary/50 hover:text-primary transition-colors flex items-center justify-center gap-2 cursor-pointer group">
           <i className="ri-arrow-left-line w-4 h-4 flex items-center justify-center group-hover:-translate-x-1 transition-transform"></i>
           Reconfigure Matrix Mode
         </button>

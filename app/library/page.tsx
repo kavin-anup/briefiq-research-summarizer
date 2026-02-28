@@ -63,7 +63,7 @@ export default function LibraryPage() {
             <h1 className="text-4xl font-black tracking-tight text-primary">My Library</h1>
             <div className="flex items-center gap-2 px-4 py-2 bg-primary/5 backdrop-blur-md rounded-[1rem] border border-primary/10 shadow-sm">
               <i className={`${cfg.icon} text-primary text-sm`}></i>
-              <span className="text-primary text-xs font-bold uppercase tracking-wider">{cfg.label}</span>
+              <span className="text-primary text-xs font-medium uppercase tracking-wider">{cfg.label}</span>
             </div>
           </div>
 
@@ -86,7 +86,7 @@ export default function LibraryPage() {
             <button
               key={filter}
               onClick={() => setSelectedFilter(filter)}
-              className={`px-5 py-2.5 rounded-[1.2rem] font-bold text-xs whitespace-nowrap transition-all duration-300 snap-start border cursor-pointer ${selectedFilter === filter
+              className={`px-5 py-2.5 rounded-[1.2rem] font-medium text-xs whitespace-nowrap transition-all duration-300 snap-start border cursor-pointer ${selectedFilter === filter
                 ? 'bg-primary text-white border-primary shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] transform -translate-y-0.5'
                 : 'bg-white/50 text-primary/60 border-white/80 hover:bg-white/80 hover:text-primary hover:border-white shadow-sm'
                 }`}
@@ -104,7 +104,7 @@ export default function LibraryPage() {
             <h3 className="text-2xl font-black text-primary mb-2 tracking-tight">No Results Found</h3>
             <p className="text-primary/60 mb-8 font-medium">Matrix query returned empty. Adjust parameters.</p>
             <Link href="/upload" className="inline-block group">
-              <button className="bg-primary text-white px-8 py-4 rounded-[1.5rem] font-bold hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center gap-3">
+              <button className="bg-primary text-white px-8 py-4 rounded-[1.5rem] font-medium hover:shadow-[0_10px_20px_-10px_rgba(16,39,88,0.4)] hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center gap-3">
                 <i className="ri-upload-cloud-line text-lg"></i>
                 Upload Paper
                 <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
@@ -123,14 +123,14 @@ export default function LibraryPage() {
                     </div>
                     <div className="flex-1 min-w-0 relative z-10">
                       <div className="flex items-start justify-between mb-2 gap-3">
-                        <h3 className="font-bold text-primary line-clamp-2 flex-1 text-sm leading-snug">{summary.title}</h3>
-                        <span className="ml-2 px-2.5 py-1 bg-white shadow-sm text-secondary text-[9px] uppercase tracking-wider font-extrabold rounded-lg whitespace-nowrap flex-shrink-0 border border-secondary/20">
+                        <h3 className="font-medium text-primary line-clamp-2 flex-1 text-sm leading-snug">{summary.title}</h3>
+                        <span className="ml-2 px-2.5 py-1 bg-white shadow-sm text-secondary text-[9px] uppercase tracking-wider font-semibold rounded-lg whitespace-nowrap flex-shrink-0 border border-secondary/20">
                           {summary.category}
                         </span>
                       </div>
                       <p className="text-xs text-primary/60 line-clamp-2 mb-4 leading-relaxed font-medium">{summary.preview}</p>
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3 text-[10px] text-primary/40 font-bold uppercase tracking-wider">
+                        <div className="flex items-center gap-3 text-[10px] text-primary/40 font-medium uppercase tracking-wider">
                           <span className="flex items-center gap-1">
                             <i className="ri-calendar-line text-sm"></i>
                             {summary.date}

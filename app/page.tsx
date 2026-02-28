@@ -41,7 +41,7 @@ export default function SplashPage() {
         </div>
 
         <h1 className="text-6xl font-black text-primary mb-4 tracking-tighter shadow-sm" style={{ fontFamily: 'var(--font-geist-sans)' }}>BriefIQ</h1>
-        <p className="text-sm sm:text-lg text-primary/60 mb-16 font-semibold tracking-[0.2em] uppercase">AI Summarization Matrix</p>
+        <p className="text-sm sm:text-lg text-primary/60 mb-16 font-medium tracking-[0.2em] uppercase">AI Summarization Matrix</p>
 
         {/* Futuristic loader */}
         <div className="flex items-center justify-center gap-3">
